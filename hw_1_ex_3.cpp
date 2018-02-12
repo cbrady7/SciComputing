@@ -1,4 +1,4 @@
-\//Christopher Brady
+//Christopher Brady
 //Sci Comp
 //HW #1 Problem 3
 
@@ -7,11 +7,22 @@ using namespace std;
 
 int main(){
 	int apples, bananas, oranges, lemons;
+	string number = "s ";
 	float total = 0;
 	cout<<"Please enter the number of apples: ";
 	cin>> apples;
+		while(apples < 0){
+			cout<<"\nThis is not a valid number of apples. Please enter a positive number"<<endl;
+			cin>>apples;
+		}
 	total += apples;
-	cout<<"The total bill for "<<apples<<" apples is: $"<<apples<<endl;
+	if(apples == 1){
+		number = " ";
+		}
+	else{
+		number = "s ";
+		}
+	cout<<"The total bill for "<<apples<<" apple"<<number<<"is: $"<<apples<<endl;
 	cout<<"Please enter the number of bunches of bananas: ";
 	cin>>bananas;
 	cout<<"The total bill for "<<bananas<<" bananas is: $"<<bananas*3.5<<endl;
