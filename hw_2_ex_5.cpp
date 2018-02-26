@@ -8,13 +8,14 @@
 using namespace std;
 
 int main(){
-float tolerance ,sumPartial, sum = 0;
+double tolerance ,sumPartial, sum = 1;
 int input, i = 0, sign = 0;
-sumPartial = tolerance+1;
+sumPartial = 1;
 
 	cout<<"Enter a non-negative tolerance."<<endl;
 	cin>>tolerance;
-	while(abs(sumPartial) >= tolerance){
+	while((abs(sumPartial) > tolerance)&& (i < 46340)){
+		i++;
 		if(i%2 == 0){
 			sign = 1;
 		}
@@ -23,8 +24,8 @@ sumPartial = tolerance+1;
 		}
 		sumPartial = sign/(2*i+1+log(i*i+1));
 		sum += sumPartial;
-		cout<<sumPartial<<endl;
-		i++;
+		cout<<log(i*i)<<endl;
+		cout<<i<<endl;
 	}
 cout<<"The calculated sum is "<<sum<<". It took "<<i+1<<" iterations."<<endl;
 return 0;
