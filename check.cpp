@@ -21,7 +21,11 @@ int sum_of_integers(int lower, int upper);
 int main(int argc, char* argv[]){
 	
 	int N, M;
+<<<<<<< HEAD
 	cout<<stod(argv[1])<<endl;
+=======
+
+>>>>>>> 1d9d9095e6fea616a55863f805cd96dcf34e3d96
 	switch(argc){
 		case 1: 
 			cout << "You didn't enter any integers!" << endl;
