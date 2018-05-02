@@ -44,7 +44,7 @@ int main(int argc, char* argv[]){
 		while(sum < dim*dim){
 			x = draw();
 			y = draw();
-			cout<<"current locatoin "<<xloc<<" , "<<yloc<<" testing for : "<<x<<" , "<<y<<endl;
+//			cout<<"current locatoin "<<xloc<<" , "<<yloc<<" testing for : "<<x<<" , "<<y<<endl;
 				if (checkMoves(xloc, yloc, x, y, dim) == 1){
 				if(board[x][y] == 0){
 					board[x][y] += 1;
@@ -64,10 +64,10 @@ int main(int argc, char* argv[]){
 		}
 		netsum += counter;
 	} 
-	cout<<netsum/num_trials<<endl;
+	cout<<float(netsum)/float(num_trials)<<endl;
 }
 int checkMoves(int curx, int cury, int movx, int movy, int dims){
-	cout<<"Entering Check Moves ("<<curx<<" , "<<cury<<")"<<endl;
+//	cout<<"Entering Check Moves ("<<curx<<" , "<<cury<<")"<<endl;
 
 	vector<vector<int> > goodMoves(dims);
 	for(int i = 0; i < dims; i++){
@@ -82,33 +82,31 @@ int checkMoves(int curx, int cury, int movx, int movy, int dims){
 	for(int i = 1; i < dims; i++){
 		if((curx + i)<dims){
 			if((cury +i)<dims){
-				cout<<"br is good"<<endl;
+		//		cout<<"br is good"<<endl;
 				goodMoves[curx+i][cury +i]= 1;
 			}
 			if((cury -i) > -1){
-				cout<<"bl is good"<<endl;
+		//		cout<<"bl is good"<<endl;
 				goodMoves[curx +i][cury-i]= 1;
 			}
 		}
 		if((curx - i) > -1){
 			if((cury+i)<dims){
-				cout<<"tr is good"<<endl;
+		//		cout<<"tr is good"<<endl;
 				goodMoves[curx-i][cury +i] = 1;
-		//		cout<<"please"<<endl;
-			}
+					}
 			if((cury - i) > -1){
-				cout<<"tl is good"<<endl;
 				goodMoves[curx-i][cury -i] = 1;
 			}
 		}
 	}
 	
-	for(int i = 0; i <dims; i++){
-		for(int j = 0; j<dims; j++){
-			cout<<goodMoves[i][j]<<" ";
-		}
-		cout<<endl;
-	}
+//	for(int i = 0; i <dims; i++){
+//		for(int j = 0; j<dims; j++){
+//			cout<<goodMoves[i][j]<<" ";
+//		}
+//		cout<<endl;
+//	}
 	goodMoves[curx][cury]=0;
 	if(goodMoves[movx][movy] == 1){
 	//	cout<<"Exiting check moves"<<endl;
